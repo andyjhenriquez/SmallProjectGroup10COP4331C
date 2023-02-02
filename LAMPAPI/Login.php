@@ -17,10 +17,10 @@
 	{
 
 		// Molds the command to be done in MySQL
-		$stmt = $conn->prepare("SELECT ID,firstName,lastName FROM Users WHERE Login=? AND Password =?");
+		$stmt = $conn->prepare("SELECT ID, firstName, lastName FROM DevUsers WHERE userName=? AND password =?");
 
 		// Sets the missing variables ('?') in the command (ss because it's two Strings)
-		$stmt->bind_param("ss", $inData["Login"], $inData["Password"]);
+		$stmt->bind_param("ss", $inData["userName"], $inData["password"]);
 
 		$stmt->execute();
 
