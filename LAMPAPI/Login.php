@@ -31,7 +31,7 @@
 		{
 			returnWithInfo( $row['firstName'], $row['lastName'], $row['ID'] );
 
-			// Starts session and stores the logged in user's ID
+			// Starts session and stores the logged in user ID
 			session_start();
 			$_SESSION['userID'] = $row['ID'];
 		}
