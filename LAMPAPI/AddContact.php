@@ -19,25 +19,14 @@
 		session_start();
 		$userID = $_SESSION['userID'];
 
-		echo "Session started\n";
-
 		// Molds the skeleton for the action to be taken in the database
 		$stmt = $conn->prepare("INSERT INTO DevContacts (firstName, lastName, phone, email, userID) VALUES(?,?,?,?,?)");
-
-		echo "Prepared\n";
 
 		// Sets variables (s for string i for integer)
 		$stmt->bind_param("ssssi", $firstName, $lastName, $phone, $email, $userID);
 
-		echo "Bound\n";
-
-		echo "userID type = " . gettype($userID) . "\n";
-		echo "phone type = " . gettype($phone) . "\n";
-
 		// Executes SQL command
-		$stmt->execute(); 
-
-		echo "Executed\n";
+		$stmt->execute();
 
 		$stmt->close();
 
