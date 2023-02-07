@@ -3,7 +3,7 @@
 
 	$inData = getRequestInfo();
 	
-	$id = 0;
+	$ID = 0;
 	$firstName = "";
 	$lastName = "";
 
@@ -30,6 +30,10 @@
 		if( $row = $result->fetch_assoc()  )
 		{
 			returnWithInfo( $row['firstName'], $row['lastName'], $row['ID'] );
+
+			// Starts session and stores the logged in user's ID
+			session_start();
+			$_SESSION['userID'] = $row['ID'];
 		}
 		else
 		{

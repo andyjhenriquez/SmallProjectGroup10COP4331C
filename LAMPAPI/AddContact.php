@@ -1,42 +1,49 @@
 <?php
 	$inData = getRequestInfo();
 
-	var_dump($inData); // Print statement but for non-Strings
-
-	$firstName = $inData["name"];
-	$userID = $inData["userID"];
+	$firstName = $inData["firstName"];
+	$lastName = $inData["lastName"];
+	$phone = $inData["phone"];
+	$email = $inData["email"];
 
 	// Connect to MySQL with (localhost, username, password, database)
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 	if ($conn->connect_error) 
 	{
-		echo "Connection unsuccessful\n";
 		returnWithError( $conn->connect_error );
 	} 
 	else
 	{
-		echo "Connection successful\n";
+
+		// Starts the session to grab the userID stored upon login
+		session_start();
+		$userID = $_SESSION['userID'];
+
+		echo "Session started\n";
 
 		// Molds the skeleton for the action to be taken in the database
-		$stmt = $conn->prepare("INSERT INTO Colors (name, userID) VALUES(?,?)");
+		$stmt = $conn->prepare("INSERT INTO DevContacts (firstName, lastName, phone, email, userID) VALUES(?,?,?,?,?)");
+
 		echo "Prepared\n";
 
 		// Sets variables (s for string i for integer)
-		$stmt->bind_param("si", $colorName, $userID);
+		$stmt->bind_param("ssssi", $firstName, $lastName, $phone, $email, $userID);
+
 		echo "Bound\n";
+
+		echo "userID type = " . gettype($userID) . "\n";
+		echo "phone type = " . gettype($phone) . "\n";
 
 		// Executes SQL command
 		$stmt->execute(); 
+
 		echo "Executed\n";
 
 		$stmt->close();
-		echo "Closing stmt\n";
 
 		$conn->close();
-		echo "Closing the connection\n";
 		
 		returnWithError("");
-		echo "Returned with error\n";
 	}
 
 	// Translates the request into a json body
