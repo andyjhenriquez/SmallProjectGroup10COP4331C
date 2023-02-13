@@ -1,8 +1,7 @@
 <?php
 	$inData = getRequestInfo();
 
-	var_dump($inData); // Print statement but for non-Strings
-
+	// Storing expected values from passed JSON body
 	$firstName = $inData["firstName"];
 	$lastName = $inData["lastName"];
     $user = $inData["user"];
