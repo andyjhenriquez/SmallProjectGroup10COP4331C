@@ -1,53 +1,50 @@
 <?php
+	$inData = getRequestInfo();
 
-$inData = getRequestInfo();
+	// Storing expected values from passed JSON body
+	$contactID = $inData["ID"];
 
-$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
+	// Connect to MySQL with (localhost, username, password, database)
+	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
+	if ($conn->connect_error) 
+	{
+		returnWithError( $conn->connect_error );
+	} 
+	else
+	{
 
-if( $conn->connect_error )
-{
-    returnWithError( $conn->connect_error );
-}
-else
-{
-    $stmt = $conn->prepare("DELETE FROM Colors WHERE Name =? AND UserID =?");
-    $stmt->bind_param("si", $inData["name"], $inData["userID"]);
-    $stmt->execute();
-    $result = $stmt->get_result();
+		// Molds the skeleton for the action to be taken in the database
+		$stmt = $conn->prepare("DELETE FROM DevContacts WHERE ID = ?");
 
-    var_dump($result);
+		// Sets variables (s for string i for integer)
+		$stmt->bind_param("i", $contactID);
 
-    if(!$result)
-    {
-        http_response_code(404);
-        returnWithError("No Records Found");
-    }
+		// Executes SQL command
+		$stmt->execute();
 
-    $stmt->close();
-    $conn->close();
-}
+		$stmt->close();
 
-function getRequestInfo()
-{
-    return json_decode(file_get_contents('php://input'), true);
-}
+		$conn->close();
+		
+		returnWithError("");
+	}
 
-function sendResultInfoAsJson( $obj )
-{
-    header('Content-type: application/json');
-    echo $obj;
-}
+	// Translates the request into a json body
+	function getRequestInfo()
+	{
+		return json_decode(file_get_contents('php://input'), true);
+	}
 
-function returnWithError( $err )
-{
-    $retValue = '{"id":0,"error":"' . $err . '"}';
-    sendResultInfoAsJson( $retValue );
-}
-
-function returnWithInfo( $numRows )
-{
-    $retValue = '{"NumRows":' . $numRows . '}';
-    sendResultInfoAsJson( $retValue );
-}
-
+	function sendResultInfoAsJson( $obj )
+	{
+		header('Content-type: application/json');
+		echo $obj;
+	}
+	
+	function returnWithError( $err )
+	{
+		$retValue = '{"error":"' . $err . '"}';
+		sendResultInfoAsJson( $retValue );
+	}
+	
 ?>
