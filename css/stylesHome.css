@@ -1,0 +1,44 @@
+div.displayButtons {
+    margin-left:-20%; 
+    margin-top:  45%;
+}
+
+input[id=searchContact] {
+    width: 70%;
+}
+
+button[type=button1] {
+    margin-top:  2%;
+
+    height: 15%;
+    width: 50%;
+}
+
+button[type=button2] {
+    margin-top:  2%;
+
+    height: 10%;
+    width: 30%;
+}
+
+button[type=button3] {
+    margin-top:  1%;
+
+    height: 10%;
+    width: 30%;
+}
+
+div.displayTable {
+    border: 2px solid rgb(112, 112, 112);
+    border-radius: 12px;
+    padding: 0px;
+
+    height: 76%;
+    width:120%; 
+    margin-left:25%; 
+    margin-top:  25%;
+
+    display: block;
+    overflow-y: auto;
+}
+

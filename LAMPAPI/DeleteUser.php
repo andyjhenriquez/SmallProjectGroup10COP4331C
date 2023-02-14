@@ -1,12 +1,6 @@
 <?php
 	$inData = getRequestInfo();
 
-	// Storing expected values from passed JSON body
-	$firstName = $inData["firstName"];
-	$lastName = $inData["lastName"];
-    $user = $inData["user"];
-    $pass = $inData["pass"];
-
 	// Connect to MySQL with (localhost, username, password, database)
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 	if ($conn->connect_error) 
@@ -16,16 +10,26 @@
 	else
 	{
 
+		session_start();
+
+		// Starts the session to grab the userID stored upon login
+		$userID = $_SESSION['userID'];
+		echo "session userid type : " . gettype($_SESSION['userID']);
+
 		// Molds the skeleton for the action to be taken in the database
-		$stmt = $conn->prepare("INSERT INTO DevUsers (firstName, lastName, user, pass) VALUES(?,?,?,?)");
+		$stmt = $conn->prepare("DELETE FROM DevUsers WHERE ID = ?");
 
 		// Sets variables (s for string i for integer)
-		$stmt->bind_param("ssss", $firstName, $lastName, $user, $pass);
+		$stmt->bind_param("i", $userID);
 
 		// Executes SQL command
-		$stmt->execute(); 
+		$stmt->execute();
+
+		session_unset();
+		session_destroy();
 
 		$stmt->close();
+
 		$conn->close();
 		
 		returnWithError("");

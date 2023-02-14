@@ -1,8 +1,9 @@
 <?php
-	$inData = getRequestInfo();
+    ini_set('display_errors', 1);
 
-	// Storing expected values from passed JSON body
-	$contactID = $inData["ID"];
+    $inData = getRequestInfo();
+
+    $contactID = $inData["ID"];
 
 	// Connect to MySQL with (localhost, username, password, database)
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
@@ -12,21 +13,19 @@
 	} 
 	else
 	{
-
 		// Molds the skeleton for the action to be taken in the database
-		$stmt = $conn->prepare("DELETE FROM DevContacts WHERE ID = ?");
+		$stmt = $conn->prepare("UPDATE DevContacts SET firstName = ?, lastName = ?, phone = ?, email = ? WHERE ID=?");
 
 		// Sets variables (s for string i for integer)
-		$stmt->bind_param("i", $contactID);
+		$stmt->bind_param("ssssi", $inData['firstName'], $inData['lastName'], $inData['phone'], $inData['email'], $contactID);
 
-		// Executes SQL command
+        // Executes SQL command
 		$stmt->execute();
 
-		$stmt->close();
+        $result = $stmt->get_result();
 
+		$stmt->close();
 		$conn->close();
-		
-		returnWithError("");
 	}
 
 	// Translates the request into a json body
