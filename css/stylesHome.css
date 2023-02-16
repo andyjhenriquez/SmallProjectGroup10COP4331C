@@ -28,10 +28,16 @@ button[type=button3] {
     width: 30%;
 }
 
+.margin-bottom {
+    margin-bottom:15px;
+}
+
 div.displayTable {
     border: 3px solid rgb(13, 110, 253);
     border-radius: 12px;
     padding: 0px;
+
+    background-color: #ffffff;
 
     height: 76%;
     width:120%; 
