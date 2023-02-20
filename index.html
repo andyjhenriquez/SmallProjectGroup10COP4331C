@@ -11,38 +11,45 @@
 	<title>Sign in</title>
 </head>
 
-<body style="background-color:#CBF7ED;">
-	<div class="container">
-	  <div class="row">
-		<div class="col-lg-10 col-xl-9 mx-auto">
-		  <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
-			<div class="card-body p-4 p-sm-5">
-			  <h5 class="card-title text-center mb-5 fw-light fs-5">Sign In</h5>
-			  <form action="http://cop4331groupten.xyz/indexHome.html">
-  
-				<div class="form-floating mb-3">
-				  <input type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus>
-				  <label for="floatingInputUsername">Username</label>
+<body style="background-image: url('background.jpg');">
+	<div class="container py-5 h-100">
+		<div class="row d-flex justify-content-center align-items-center h-100">
+			<div class="col-xl-6">
+				<div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden" style="width: 25rem;">
+					<div class="card-body p-md-5 mx-md-4">
+						<div class="text-center">
+							<img src="contactmanager.png" style="width: 150px;" alt="logo">
+							<h4 class="mt-1 mb-4 pb-1">My Contact Manager</h4>
+						</div>
+						<form action="http://cop4331groupten.xyz/indexHome.html">
+
+							<div class="form-floating mb-3">
+								<input type="text" class="form-control" id="floatingInputUsername"
+									placeholder="myusername" required autofocus>
+								<label for="floatingInputUsername">Username</label>
+							</div>
+
+							<div class="form-floating mb-3">
+								<input type="password" class="form-control" id="floatingPassword"
+									placeholder="Password">
+								<label for="floatingPassword">Password</label>
+							</div>
+							<div class="d-grid mb-2">
+								<button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase"
+									type="submit">Sign in</button>
+							</div>
+
+							<a class="d-block text-center mt-2 small" href="signup.html">Don't have an account? Sign
+								Up</a>
+
+							<hr class="my-4">
+
+						</form>
+					</div>
 				</div>
-  
-				<div class="form-floating mb-3">
-				  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-				  <label for="floatingPassword">Password</label>
-				</div>
-				<div class="d-grid mb-2">
-				  <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Sign in</button>
-				</div>
-  
-				<a class="d-block text-center mt-2 small" href="signup.html">Don't have an account? Sign Up</a>
-  
-				<hr class="my-4">
-  
-			  </form>
 			</div>
-		  </div>
 		</div>
-	  </div>
 	</div>
-  </body>
-  
+</body>
+
 </html>
