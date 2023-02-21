@@ -15,31 +15,35 @@
 </head>
 
 <!-- Webpage -->
-<body style="background-color:#CBF7ED;">
+<body style="background-image: url('background.jpg');">
   <div class="container"> <!-- Splits into 2 columns -->
     <div class="row">
       <div class="col-6">
         <div class="displayButtons"> <!-- CSS div for buttons -->
-          <div class="container"> <!-- Splits 1st column into 2 rows -->
-            <div class="col">
-              <div class="row-6 d-flex justify-content-center align-items-center"> <!-- Search Contact input field -->
-                <input type="text" class="form-control" id="searchContact" placeholder="Search Contact">
-              </div>
-              <div class="row-6 d-flex justify-content-center align-items-center"> <!-- Create Contact button -->
-                <button type="button1" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Create Contact</button>
-              </div>
-              <div class="row-6 d-flex justify-content-center align-items-center"> <!-- Edit button -->
-                <button type="button2" class="btn btn-primary btn-lg">Edit</button>
-              </div>
-              <div class="row-6 d-flex justify-content-center align-items-center"> <!-- Delete button -->
-                <button type="button3" class="btn btn-primary btn-lg">Delete</button>
+          <div class="card flex-row my-0 border-0 shadow rounded-3 overflow-hidden" style="width: 85%;"> <!-- Card with shadow -->
+            <div class="card-body p-md-5 mx-md-4">
+              <div class="container"> <!-- Splits 1st column into 2 rows -->
+                <div class="col">
+                  <div class="row-6 d-flex justify-content-center align-items-center"> <!-- Search Contact input field -->
+                    <input type="text" class="form-control" id="searchContact" placeholder="Search Contact">
+                  </div>
+                  <div class="row-6 d-flex justify-content-center align-items-center"> <!-- Create Contact button -->
+                    <button type="button1" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Create Contact</button>
+                  </div>
+                  <div class="row-6 d-flex justify-content-center align-items-center"> <!-- Edit button -->
+                    <button type="button2" class="btn btn-primary btn-lg">Edit</button>
+                  </div>
+                  <div class="row-6 d-flex justify-content-center align-items-center"> <!-- Delete button -->
+                    <button type="button3" class="btn btn-primary btn-lg">Delete</button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>    
+          </div>  
         </div>
       </div>
         <div class="col-6"> <!-- 2nd column displays table -->
-          <div class="displayTable" style="background-color: #ffffff;">
+          <div class="displayTable shadow" style="background-color: #ffffff;">
             <table id="dataTable" class="table table-striped table-hover table-responsive">
               <thead>
                 <tr>
