@@ -120,15 +120,19 @@ function doLogout()
 	window.location.href = "index.html";
 }
 
-function addColor()
+function addContact()
 {
-	let newColor = document.getElementById("colorText").value;
-	document.getElementById("colorAddResult").innerHTML = "";
+	let fn = document.getElementById("firstName").value;
+	let ln = document.getElementById("lastName").value;
+	let pn = document.getElementById("phone").value;
+	let e = document.getElementById("email").value;
 
-	let tmp = {color:newColor,userId,userId};
+	//document.getElementById("colorAddResult").innerHTML = "";
+
+	let tmp = {firstName:fn,lastName:ln,phone:pn,email:e};
 	let jsonPayload = JSON.stringify( tmp );
 
-	let url = urlBase + '/AddColor.' + extension;
+	let url = urlBase + '/AddContact.' + extension;
 	
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -139,7 +143,7 @@ function addColor()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("colorAddResult").innerHTML = "Color has been added";
+				//document.getElementById("colorAddResult").innerHTML = "Color has been added";
 			}
 		};
 		xhr.send(jsonPayload);

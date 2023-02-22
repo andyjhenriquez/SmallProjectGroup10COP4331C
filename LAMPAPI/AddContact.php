@@ -1,4 +1,8 @@
 <?php
+
+	header('Content-type: application/json');
+	header('Access-Control-Allow-Origin');
+
 	$inData = getRequestInfo();
 
 	$firstName = $inData["firstName"];
@@ -43,7 +47,6 @@
 
 	function sendResultInfoAsJson( $obj )
 	{
-		header('Content-type: application/json');
 		echo $obj;
 	}
 	

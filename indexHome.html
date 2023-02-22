@@ -176,22 +176,22 @@
           </button>
         </div>
         <div class="modal-body">
-          <form class="needs-validation" nonvalidate> <!-- Actual Form -->
+          <form id="addContactForm" class="needs-validation" nonvalidate> <!-- Actual Form -->
             <div class="form-group">
-              <label for="inputFirstName">First name</label>
-              <input type="text" class="form-control margin-bottom" id="inputFirstName" placeholder="John" required>
+              <label for="firstName">First name</label>
+              <input type="text" class="form-control margin-bottom" id="firstName" placeholder="John" required>
             </div>
             <div class="form-group">
-              <label for="inputLastName">Last name</label>
-              <input type="text" class="form-control margin-bottom" id="inputLastName" placeholder="Smith" required>
+              <label for="lastName">Last name</label>
+              <input type="text" class="form-control margin-bottom" id="lastName" placeholder="Smith" required>
             </div>
             <div class="form-group">
-              <label for="inputPhone">Phone</label>
-              <input type="tel" class="form-control margin-bottom" id="inputPhone" placeholder="123-456-7890" required>
+              <label for="phone">Phone</label>
+              <input type="tel" class="form-control margin-bottom" id="phone" placeholder="123-456-7890" required>
             </div>
             <div class="form-group">
-              <label for="inputEmail">Email</label>
-              <input type="email" class="form-control margin-bottom;" id="inputEmail" placeholder="johnsmith@email.com" required>
+              <label for="email">Email</label>
+              <input type="email" class="form-control margin-bottom;" id="email" placeholder="johnsmith@email.com" required>
             </div>
         </div>
         <div class="modal-footer">
@@ -202,5 +202,19 @@
       </div>
     </div>
   </div>
+<script> // Stops page from reloading and calls addContact function
+  window.addEventListener("load", function () {
+    //not jquery!
+    // Access the form element...
+    var form = document.getElementById("addContactForm");
+    
+    // ...and take over its submit event.
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // prevent form submission and reloading the page.
+
+      addContact();
+    });
+  });
+</script>
 </body>
 </html> 
