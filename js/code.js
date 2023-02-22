@@ -34,19 +34,25 @@ function doLogin()
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				userId = jsonObject.id;
-		
+				
+				console.log(jsonObject);
+				console.log(userId);
+
 				if( userId < 1 )
 				{		
 					//document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
 					return;
 				}
 		
-				user = jsonObject.firstName;
-				pass = jsonObject.lastName;
+				firstName = jsonObject.firstName;
+				lastName = jsonObject.lastName;
+
+				console.log(firstName);
+				console.log(lastName);
 
 				saveCookie();
 	
-				window.location.href = "index.html";
+				window.location.href = "indexHome.html";
 			}
 		};
 		console.log(jsonPayload);
