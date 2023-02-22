@@ -8,6 +8,8 @@ input[id=searchContact] {
 }
 
 button[type=button1] {
+    overflow     : hidden;
+
     margin-top:  2%;
 
     height: 15%;
@@ -15,6 +17,8 @@ button[type=button1] {
 }
 
 button[type=button2] {
+    overflow     : hidden;
+
     margin-top:  2%;
 
     height: 10%;
@@ -22,6 +26,8 @@ button[type=button2] {
 }
 
 button[type=button3] {
+    overflow     : hidden;
+
     margin-top:  1%;
 
     height: 10%;
@@ -41,7 +47,7 @@ div.displayTable {
 
     height: 76%;
     width:120%; 
-    margin-left:15%; 
+    margin-left:-15%; 
     margin-top:  25%;
 
     display: block;
