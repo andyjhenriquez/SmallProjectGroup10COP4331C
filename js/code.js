@@ -49,6 +49,7 @@ function doLogin()
 				window.location.href = "index.html";
 			}
 		};
+		console.log(jsonPayload);
 		xhr.send(jsonPayload);
 	}
 	catch(err)
