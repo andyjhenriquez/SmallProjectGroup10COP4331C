@@ -30,6 +30,9 @@ function doLogin()
 	{
 		xhr.onreadystatechange = function() 
 		{
+			console.log("Got into readystatechange");
+			console.log("Ready state: " + this.readyState);
+			console.log("Status: " + this.status);
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
