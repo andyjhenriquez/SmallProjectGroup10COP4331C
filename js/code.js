@@ -53,7 +53,7 @@ function doLogin()
 				console.log(firstName);
 				console.log(lastName);
 
-				saveCookie();
+				//saveCookie();
 	
 				window.location.href = "indexHome.html";
 			}
