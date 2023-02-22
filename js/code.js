@@ -17,7 +17,7 @@ function doLogin()
 	
 	document.getElementById("loginResult").innerHTML = "";
 
-	let tmp = {login:login,password:password};
+	let tmp = {user:login,pass:password};
 //	var tmp = {login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 	
@@ -41,8 +41,8 @@ function doLogin()
 					return;
 				}
 		
-				firstName = jsonObject.firstName;
-				lastName = jsonObject.lastName;
+				user = jsonObject.firstName;
+				pass = jsonObject.lastName;
 
 				saveCookie();
 	
