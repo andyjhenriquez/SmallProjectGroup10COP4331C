@@ -21,7 +21,7 @@
 							<img src="contactmanager.png" style="width: 150px;" alt="logo">
 							<h4 class="mt-1 mb-4 pb-1">My Contact Manager</h4>
 						</div>
-						<form onsubmit="return doLogin()">
+						<form id="loginForm">
 
 							<div class="form-floating mb-3">
 								<input type="text" class="form-control" id="floatingUsername"
@@ -51,5 +51,18 @@
 		</div>
 	</div>
 </body>
-
+<script>
+	window.addEventListener("load", function () {
+	   //not jquery!
+	   // Access the form element...
+	   var form = document.getElementById("loginForm");
+	   
+	   // ...and take over its submit event.
+	   form.addEventListener("submit", function (event) {
+		   event.preventDefault(); // prevent form submission and reloading the page.
+   
+		   doLogin();
+	   });
+   });
+   </script>
 </html>
