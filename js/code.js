@@ -26,8 +26,10 @@ function doLogin()
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	console.log("Before try");
 	try
 	{
+		console.log("After try");
 		xhr.onreadystatechange = function() 
 		{
 			console.log("Got into readystatechange");
