@@ -249,8 +249,8 @@
         $("#deleteModalCenter").hide();
         console.log("trying to hide modal");
        
-        $('#dataTable').DataTable().destroy();
-        getContacts();
+        $('#dataTable').DataTable().clear();
+        $('#dataTable').DataTable().draw();
       }
       else
       {
