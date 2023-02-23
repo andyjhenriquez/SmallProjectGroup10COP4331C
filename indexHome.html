@@ -36,7 +36,7 @@
                     <button type="button1" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Create Contact</button>
                   </div>
                   <div class="row-6 d-flex justify-content-center align-items-center"> <!-- Edit button -->
-                    <button type="button2" class="btn btn-primary btn-lg">Edit</button>
+                    <button type="button2" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#editModalCenter">Edit</button>
                   </div>
                   <div class="row-6 d-flex justify-content-center align-items-center"> <!-- Delete button -->
                     <button type="button3" class="btn btn-primary btn-lg">Delete</button>
@@ -132,6 +132,76 @@
       else
       {
         $('#exampleModalCenter').modal('show');
+        console.log("trying to show modal");
+      }
+    });
+  });
+</script>
+<!-- Edit Form Modal -->
+<div class="modal" id="editModalCenter" tabindex="-1" role="dialog" aria-labelledby="editModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModalLongTitle">Edit Contact</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="editContactForm" class="needs-validation" nonvalidate> <!-- Actual Form -->
+          <div class="form-group">
+            <label for="firstName">First name</label>
+            <input type="text" class="form-control margin-bottom" id="firstNameEdit" placeholder="John" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input type="text" class="form-control margin-bottom" id="lastNameEdit" placeholder="Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" class="form-control margin-bottom" id="phoneEdit" placeholder="123-456-7890" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control margin-bottom;" id="emailEdit" placeholder="johnsmith@email.com" required>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Edit</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script> 
+  // Stops page from reloading and calls editContact function
+  window.addEventListener("load", function () {
+    //not jquery!
+    // Access the form element...
+    var form = document.getElementById("editContactForm");
+    
+    // ...and take over its submit event.
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // prevent form submission and reloading the page.
+
+      console.log("Before editContact");
+
+      if(editContact()) // If addContact() true: hide modal, else dont
+      {
+        $("#editModalCenter").removeClass("in");
+        $(".modal-backdrop").remove();
+        $('body').removeClass('modal-open');
+        $('body').css('padding-right', '');
+        $("#editModalCenter").hide();
+        console.log("trying to hide modal");
+       
+        $('#dataTable').DataTable().destroy();
+        getContacts();
+      }
+      else
+      {
+        $('#editModalCenter').modal('show');
         console.log("trying to show modal");
       }
     });

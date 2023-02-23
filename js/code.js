@@ -245,6 +245,40 @@ function listContacts() {
 	});
 }
 
+function editContact() {
+
+	let fn = document.getElementById("firstNameEdit").value;
+	let ln = document.getElementById("lastNameEdit").value;
+	let pn = document.getElementById("phoneEdit").value;
+	let e = document.getElementById("emailEdit").value;
+
+	let tmp = { id: idNum, firstName: fn, lastName: ln, phone: pn, email: e };
+	let jsonPayload = JSON.stringify(tmp);
+
+	let url = urlBase + '/UpdateContact.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try {
+		xhr.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				if (userId < 1) // THIS IS WHERE WE SEE IF CONTACT IS IN DB ALREADY
+				{
+					//document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+					return false;
+				}
+			}
+		};
+		xhr.send(jsonPayload);
+		return true;
+	}
+	catch (err) {
+		return false;
+	}
+
+}
+
 function searchColor() {
 	let srch = document.getElementById("searchText").value;
 	document.getElementById("colorSearchResult").innerHTML = "";
