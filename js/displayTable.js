@@ -6,34 +6,12 @@ function displayData(dataFromTable)
                 "targets": "_all"
                  }],
         columns: [
-                {
-                field: 'firstName',
-                title: 'First Name',
-                sortable: true,
-                cellStyle: 'cellStyle',
-                align: 'center'
-              }, {
-                field: 'lastName',
-                title: 'Last Name',
-                sortable: true,
-                cellStyle: 'cellStyle',
-                align: 'center'
-              }, {
-                field: 'phone',
-                title: 'Phone',
-                sortable: "True",
-                cellStyle: 'cellStyle',
-                align: 'center',
-                
-              },{
-                field: 'email',
-                title: 'Email',
-                sortable: "True",
-                cellStyle: 'cellStyle' ,
-                align: 'center'
-              }
+                { 'data': 'firstName' },
+                { 'data': 'lastName' },
+                { 'data': 'phone' },
+                { 'data': 'email' },
                ],
-        data: dataFromTable, // Populates with data from table
+        data: dataFromTable.data, // Populates with data from table
         "bLengthChange": false, // Hides changing # of entries shown
         "sDom": 'lrtip', // Hides default search box
         "bInfo": false }); // Hides # of entries currently shown
