@@ -126,7 +126,8 @@
         $("#exampleModalCenter").hide();
         console.log("trying to hide modal");
        
-        DataTable.ajax.reload( null, false );
+        $('#table1').DataTable().destroy();
+        getContacts();
       }
       else
       {
