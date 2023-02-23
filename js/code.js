@@ -81,7 +81,7 @@ function doRegister()
 	let login = document.getElementById("inputUsername").value;
 	let password = document.getElementById("inputPassword").value;
 
-
+	
 	let tmp = {firstName:fName,lastName:lName,user:login,pass:password};
 
 	let jsonPayload = JSON.stringify( tmp );
@@ -91,10 +91,10 @@ function doRegister()
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	
+	console.log("Before try");
 	try
 	{
-		
+		console.log("After try");
 		xhr.onreadystatechange = function() 
 		{
 			if (this.readyState == 4 && this.status == 200) 
