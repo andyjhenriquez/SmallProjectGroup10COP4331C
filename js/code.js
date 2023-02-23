@@ -101,7 +101,8 @@ function doRegister()
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
                 userId = jsonObject.id;
-
+				console.log(jsonObject);
+				console.log(userId);
                 if( userId < 1 )
 				{		
 					//document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
