@@ -141,7 +141,11 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				return false;
+				if( userId < 1 ) // THIS IS WHERE WE SEE IF CONTACT IS IN DB ALREADY
+				{		
+					//document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+					return FALSE;
+				}
 			}
 		};
 		xhr.send(jsonPayload);
@@ -149,7 +153,7 @@ function addContact()
 	}
 	catch(err)
 	{
-		document.getElementById("colorAddResult").innerHTML = err.message;
+		return false;
 	}
 	
 }
