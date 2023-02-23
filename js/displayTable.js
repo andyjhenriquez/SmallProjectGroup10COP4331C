@@ -33,7 +33,7 @@ function displayData(dataFromTable)
                 align: 'center'
               }
                ],
-        data: dataFromTable, // Populates with data from table
+        data: dataFromTable.data, // Populates with data from table
         "bLengthChange": false, // Hides changing # of entries shown
         "sDom": 'lrtip', // Hides default search box
         "bInfo": false }); // Hides # of entries currently shown
