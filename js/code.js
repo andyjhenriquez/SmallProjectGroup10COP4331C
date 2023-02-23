@@ -127,8 +127,6 @@ function addContact()
 	let pn = document.getElementById("phone").value;
 	let e = document.getElementById("email").value;
 
-	//document.getElementById("colorAddResult").innerHTML = "";
-
 	let tmp = {firstName:fn,lastName:ln,phone:pn,email:e};
 	let jsonPayload = JSON.stringify( tmp );
 
@@ -143,10 +141,36 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				//document.getElementById("colorAddResult").innerHTML = "Color has been added";
+				return false;
 			}
 		};
 		xhr.send(jsonPayload);
+		return true;
+	}
+	catch(err)
+	{
+		document.getElementById("colorAddResult").innerHTML = err.message;
+	}
+	
+}
+
+function getContacts()
+{
+	let url = urlBase + '/GetContacts.' + extension;
+	
+	let xhr = new XMLHttpRequest();
+	xhr.open("GET", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				//document.getElementById("colorAddResult").innerHTML = "Color has been added";
+			}
+		};
+		xhr.send();
 	}
 	catch(err)
 	{

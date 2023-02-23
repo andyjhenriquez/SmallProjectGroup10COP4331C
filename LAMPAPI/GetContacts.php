@@ -1,4 +1,8 @@
 <?php
+
+	header('Content-type: application/json');
+	header('Access-Control-Allow-Origin');
+
 	ini_set('display_errors', 1);
 
 	// Connect to MySQL with (localhost, username, password, database)
@@ -49,7 +53,6 @@
 
 	function sendResultInfoAsJson( $obj )
 	{
-		header('Content-type: application/json');
 		echo $obj;
 	}
 	

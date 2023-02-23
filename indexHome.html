@@ -216,7 +216,11 @@
     form.addEventListener("submit", function (event) {
       event.preventDefault(); // prevent form submission and reloading the page.
 
-      addContact();
+      console.log("Before addContact");
+      if(addContact())
+        $('#exampleModalCenter').modal('hide');
+      else
+        $('#exampleModalCenter').modal('show');
     });
   });
 </script>
