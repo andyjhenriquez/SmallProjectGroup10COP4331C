@@ -206,7 +206,12 @@
       </div>
     </div>
   </div>
-<script> // Stops page from reloading and calls addContact function
+<script> 
+  // Displays table when page is loaded
+  window.onload = function() {
+    console.log(getContacts());
+  };
+  // Stops page from reloading and calls addContact function
   window.addEventListener("load", function () {
     //not jquery!
     // Access the form element...
