@@ -1,4 +1,4 @@
-const urlBase = 'http://cop4331groupten.xyz/LAMPAPI';
+const urlB = 'http://cop4331groupten.xyz/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
@@ -21,7 +21,7 @@ function doRegister()
 
 	let jsonPayload = JSON.stringify( tmp );
 	
-	let url = urlBase + '/Register.' + extension;
+	let url = urlB + '/Register.' + extension;
 
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -32,18 +32,12 @@ function doRegister()
 		
 		xhr.onreadystatechange = function() 
 		{
-			console.log("Got into readystatechange");
-			console.log("Ready state: " + this.readyState);
-			console.log("Status: " + this.status);
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
-				userId = jsonObject.id;
-				
-				console.log(jsonObject);
-				console.log(userId);
+                userId = jsonObject.id;
 
-				if( userId < 1 )
+                if( userId < 1 )
 				{		
 					//document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
 					return;
@@ -51,17 +45,13 @@ function doRegister()
 		
 				firstName = jsonObject.firstName;
 				lastName = jsonObject.lastName;
-
-				console.log(firstName);
-				console.log(lastName);
-
-				//saveCookie();
 	
-				window.location.href = "indexHome.html";
+				window.location.href = "index.html";
 			}
 		};
-		console.log(jsonPayload);
+
 		xhr.send(jsonPayload);
+
 	}
 	catch(err)
 	{
