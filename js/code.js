@@ -210,6 +210,7 @@ function listContacts()
                     tr.append("<td>" + xhr[i].phone + "</td>");
                     tr.append("<td>" + xhr[i].email + "</td>");
                     tr.append("<td>" + xhr[i].ID + "</td>");
+					console.log(tr);
                     $('table').append(tr);
                 }
             });
