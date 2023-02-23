@@ -1,3 +1,5 @@
+var idNum;
+
 function displayData(dataFromTable)
 {
     var dataTable =  $('#dataTable').dataTable({
@@ -21,7 +23,7 @@ function displayData(dataFromTable)
       var DataTable = $('#dataTable').DataTable();
       DataTable.on('click', 'tbody tr', function() {
         console.log('API row values : ', DataTable.row(this).data());
-        var idNum = DataTable.row(this).data().ID;
+        idNum = DataTable.row(this).data().ID;
       })
       // Allows for use of our own search input field
       $("#searchContact").keyup(function() {

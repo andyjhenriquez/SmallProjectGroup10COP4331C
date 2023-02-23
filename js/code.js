@@ -247,12 +247,13 @@ function listContacts() {
 
 function editContact() {
 
+	//let id = alert(idNum);
 	let fn = document.getElementById("firstNameEdit").value;
 	let ln = document.getElementById("lastNameEdit").value;
 	let pn = document.getElementById("phoneEdit").value;
 	let e = document.getElementById("emailEdit").value;
 
-	let tmp = { id: alert(idNum), firstName: fn, lastName: ln, phone: pn, email: e };
+	let tmp = { id: idNum, firstName: fn, lastName: ln, phone: pn, email: e };
 	let jsonPayload = JSON.stringify(tmp);
 
 	let url = urlBase + '/UpdateContact.' + extension;
