@@ -20,10 +20,10 @@ function displayData(dataFromTable)
         "bInfo": false }); // Hides # of entries currently shown
       
         // Allows for clicking on rows
-        DataTable = $('#dataTable').DataTable();
-        DataTable.on('click', 'tbody tr', function() {
-        console.log('API row values : ', DataTable.row(this).data());
-        idNum = DataTable.row(this).data().ID;
+        dataTable = $('#dataTable').DataTable();
+        dataTable.on('click', 'tbody tr', function() {
+        console.log('API row values : ', dataTable.row(this).data());
+        idNum = dataTable.row(this).data().ID;
       })
       // Allows for use of our own search input field
       $("#searchContact").keyup(function() {
