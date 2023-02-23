@@ -146,7 +146,8 @@
                   <td>Smith</td>
                   <td>123-456-7890</td>
                   <td>johnsmith@email.com</td>
-                </tr> 
+                </tr>
+                <script>listContacts();</script>
               <tbody>
             </table>
           </div>
@@ -206,7 +207,13 @@
       </div>
     </div>
   </div>
-<script> // Stops page from reloading and calls addContact function
+<script> 
+  // Displays table when page is loaded
+  window.onload = function() {
+    listContacts();
+    console.log(JSON.parse(getContacts()));
+  };
+  // Stops page from reloading and calls addContact function
   window.addEventListener("load", function () {
     //not jquery!
     // Access the form element...

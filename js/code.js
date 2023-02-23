@@ -183,6 +183,41 @@ function getContacts()
 	
 }
 
+function listContacts()
+{
+    // define variables
+    let url = urlBase + '/Login.' + extension;
+
+    // establish XMLHttpRequest
+    let xhr = new XMLHttpRequest();
+
+    // new GET operation
+    xhr.open("GET", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    
+    // checks to see if the document is loaded and ready to begin
+    $(document).ready(function () {
+        // grabs instance of JSON from the URL, and causes a function based on the xhr request
+        $.getJSON(url,
+            function (xhr) {
+                var tr;
+				console.log("In function with var xhr");
+                console.log("xhr.length: " + xhr.length);
+                // for the length of xhr (basically all values in the dataset), iterate through them and add them to a table
+                for (var i = 0; i < xhr.length; i++) {
+                    tr = $('<tr/>');
+                    tr.append("<td>" + xhr[i].firstName + "</td>");
+                    tr.append("<td>" + xhr[i].lastName + "</td>");
+                    tr.append("<td>" + xhr[i].phone + "</td>");
+                    tr.append("<td>" + xhr[i].email + "</td>");
+                    tr.append("<td>" + xhr[i].ID + "</td>");
+					console.log(tr);
+                    $('table').append(tr);
+                }
+            });
+    });
+}
+
 function searchColor()
 {
 	let srch = document.getElementById("searchText").value;
