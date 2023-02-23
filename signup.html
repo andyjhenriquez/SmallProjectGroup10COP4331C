@@ -68,7 +68,7 @@
 
 							<div class="d-grid mb-2">
 								<button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase"
-									type="submit">Sign Up</button>
+									type="submit" onclick="doRegister();">Sign Up</button>
 							</div>
 
 							<a class="d-block text-center mt-2 small" href="index.html">Have an account? Sign In</a>
@@ -84,18 +84,4 @@
 	</div>
 
 </body>
-<script>
-	window.addEventListener("load", function () {
-	   //not jquery!
-	   // Access the form element...
-	   var form = document.getElementById("registerForm");
-	   
-	   // ...and take over its submit event.
-	   form.addEventListener("submit", function (event) {
-		   event.preventDefault(); // prevent form submission and reloading the page.
-   
-		   doRegister();
-	   });
-   });
-   </script>
 </html>
