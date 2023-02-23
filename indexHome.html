@@ -129,7 +129,7 @@
 
         var tables = $.fn.dataTable.fnTables(true);
         $(tables).each(function () {
-          $(this).dataTable().Destroy();
+          $(this).dataTable().fnDestroy();
           $(this).dataTable().clear();
           console.log("DESTROYING TABLE");
         });
