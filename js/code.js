@@ -88,6 +88,7 @@ function doRegister() {
 	try {
 		console.log("After try");
 		xhr.onreadystatechange = function () {
+			console.log("After statechange");
 			if (this.readyState == 4 && this.status == 200) {
 				let jsonObject = JSON.parse(xhr.responseText);
 
