@@ -171,7 +171,7 @@ function getContacts()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				displayData(JSON.parse(xhr.responseText));
+				displayData(xhr.responseText);
 			}
 		};
 		xhr.send();
