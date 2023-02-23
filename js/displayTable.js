@@ -1,8 +1,9 @@
 var idNum;
+var dataTable;
 
 function displayData(dataFromTable)
 {
-    var dataTable =  $('#dataTable').dataTable({
+        dataTable =  $('#dataTable').dataTable({
         columnDefs: [{
                 "defaultContent": "-",
                 "targets": "_all"
