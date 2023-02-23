@@ -144,7 +144,7 @@ function addContact()
 				if( userId < 1 ) // THIS IS WHERE WE SEE IF CONTACT IS IN DB ALREADY
 				{		
 					//document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
-					return FALSE;
+					return false;
 				}
 			}
 		};
