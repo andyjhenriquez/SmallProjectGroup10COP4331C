@@ -3,7 +3,7 @@ var dataTable;
 
 function displayData(dataFromTable)
 {
-        dataTable =  $('#dataTable').dataTable({
+        dataTable =  $('#dataTable').DataTable({
         columnDefs: [{
                 "defaultContent": "-",
                 "targets": "_all"
@@ -21,9 +21,9 @@ function displayData(dataFromTable)
       
         // Allows for clicking on rows
         DataTable = $('#dataTable').DataTable();
-          DataTable.on('click', 'tbody tr', function() {
-          console.log('API row values : ', DataTable.row(this).data());
-          idNum = DataTable.row(this).data().ID;
+        DataTable.on('click', 'tbody tr', function() {
+        console.log('API row values : ', DataTable.row(this).data());
+        idNum = DataTable.row(this).data().ID;
       })
       // Allows for use of our own search input field
       $("#searchContact").keyup(function() {
