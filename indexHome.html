@@ -217,9 +217,14 @@
       event.preventDefault(); // prevent form submission and reloading the page.
 
       console.log("Before addContact");
-      if(addContact())
+
+      if(addContact()) // If addContact() true: hide modal, else dont
       {
-        $('#exampleModalCenter').modal('hide');
+        $("#exampleModalCenter").removeClass("in");
+        $(".modal-backdrop").remove();
+        $('body').removeClass('modal-open');
+        $('body').css('padding-right', '');
+        $("#exampleModalCenter").hide();
         console.log("trying to hide modal");
       }
       else
