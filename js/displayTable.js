@@ -16,8 +16,12 @@ function displayData(dataFromTable)
         "sDom": 'lrtip', // Hides default search box
         "bInfo": false }); // Hides # of entries currently shown
       
-      // Allows for use of our own search input field
+      // Allows for clicking on rows
       var dataTable = $('#dataTable').dataTable();
+      dataTable.on('click', 'tbody tr', function() {
+        console.log('API row values : ', table.row(this).data());
+      })
+      // Allows for use of our own search input field
       $("#searchContact").keyup(function() {
           dataTable.fnFilter(this.value);
       });
