@@ -258,10 +258,10 @@ function editContact() {
 	console.log("In editContact pn: " + pn);
 	console.log("In editContact e: " + e);
 
-	let tmp = { id: idNum, firstName: fn, lastName: ln, phone: pn, email: e };
+	let tmp = { ID: idNum, firstName: fn, lastName: ln, phone: pn, email: e };
 	let jsonPayload = JSON.stringify(tmp);
 	console.log(JSON.parse(jsonPayload));
-	
+
 	let url = urlBase + '/UpdateContact.' + extension;
 
 	let xhr = new XMLHttpRequest();
