@@ -21,16 +21,11 @@ function displayData(dataFromTable)
       var DataTable = $('#dataTable').DataTable();
       DataTable.on('click', 'tbody tr', function() {
         console.log('API row values : ', DataTable.row(this).data());
-        id = DataTable.row(this).data().ID;
-        fn = DataTable.row(this).data().firstName;
-        ln = DataTable.row(this).data().lastName;
-        pn = DataTable.row(this).data().phone;
-        e = DataTable.row(this).data().email;
-        console.log('id : ', id);
-        console.log('fn : ', fn);
-        console.log('ln : ', ln);
-        console.log('pn : ', pn);
-        console.log('e : ', e);
+        var id = DataTable.row(this).data().ID;
+        var fn = DataTable.row(this).data().firstName;
+        var ln = DataTable.row(this).data().lastName;
+        var pn = DataTable.row(this).data().phone;
+        var e = DataTable.row(this).data().email;
       })
       // Allows for use of our own search input field
       $("#searchContact").keyup(function() {
