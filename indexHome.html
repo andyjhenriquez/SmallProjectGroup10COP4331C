@@ -39,7 +39,8 @@
                     <button type="button2" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#editModalCenter">Edit</button>
                   </div>
                   <div class="row-6 d-flex justify-content-center align-items-center"> <!-- Delete button -->
-                    <button type="button3" class="btn btn-primary btn-lg">Delete</button>
+                    <button type="button3" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#deleteModalCenter">Delete</button>
+
                   </div>
                 </div>
               </div>
@@ -202,6 +203,57 @@
       else
       {
         $('#editModalCenter').modal('show');
+        console.log("trying to show modal");
+      }
+    });
+  });
+</script>
+<!-- Delete Form Modal -->
+<div class="modal" id="deleteModalCenter" tabindex="-1" role="dialog" aria-labelledby="deleteModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLongTitle">Are you sure?</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="submit" class="btn btn-primary">Yes</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script> 
+  // Stops page from reloading and calls deleteContact function
+  window.addEventListener("load", function () {
+    //not jquery!
+    // Access the form element...
+    var form = document.getElementById("deleteContactForm");
+    
+    // ...and take over its submit event.
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // prevent form submission and reloading the page.
+
+      console.log("Before deleteContact");
+
+      if(deleteContact()) // If deleteContact() true: hide modal, else dont
+      {
+        $("#deleteModalCenter").removeClass("in");
+        $(".modal-backdrop").remove();
+        $('body').removeClass('modal-open');
+        $('body').css('padding-right', '');
+        $("#deleteModalCenter").hide();
+        console.log("trying to hide modal");
+       
+        $('#dataTable').DataTable().destroy();
+        getContacts();
+      }
+      else
+      {
+        $('#deleteModalCenter').modal('show');
         console.log("trying to show modal");
       }
     });

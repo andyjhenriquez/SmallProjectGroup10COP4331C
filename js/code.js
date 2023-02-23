@@ -287,6 +287,39 @@ function editContact() {
 
 }
 
+function deleteContact() {
+
+	console.log("In removeContact id: " + idNum);
+
+	let tmp = { ID: idNum };
+	let jsonPayload = JSON.stringify(tmp);
+	console.log(JSON.parse(jsonPayload));
+
+	let url = urlBase + '/RemoveContact.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try {
+		xhr.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				if (userId < 1) // THIS IS WHERE WE SEE IF CONTACT IS IN DB ALREADY
+				{
+					console.log(xhr.responseText);
+					return false;
+				}
+			}
+		};
+		console.log(xhr.responseText);
+		xhr.send(jsonPayload);
+		return true;
+	}
+	catch (err) {
+		return false;
+	}
+
+}
+
 function searchColor() {
 	let srch = document.getElementById("searchText").value;
 	document.getElementById("colorSearchResult").innerHTML = "";
