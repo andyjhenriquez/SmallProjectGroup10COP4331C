@@ -48,124 +48,8 @@
       </div>
         <div class="col-lg-6"> <!-- 2nd column displays table -->
           <div class="displayTable shadow" style="background-color: #ffffff;">
-            <table id="dataTable" class="table table-striped table-hover table-responsive">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Phone</th>
-                  <th scope="col">Email</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>John</td>
-                  <td>Smith</td>
-                  <td>123-456-7890</td>
-                  <td>johnsmith@email.com</td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>John</td>
-                  <td>Smith</td>
-                  <td>123-456-7890</td>
-                  <td>johnsmith@email.com</td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>John</td>
-                  <td>Smith</td>
-                  <td>123-456-7890</td>
-                  <td>johnsmith@email.com</td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Alex</td>
-                  <td>Smith</td>
-                  <td>123-456-7890</td>
-                  <td>johnsmith@email.com</td>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>John</td>
-                  <td>Smith</td>
-                  <td>123-456-7890</td>
-                  <td>johnsmith@email.com</td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>John</td>
-                  <td>Smith</td>
-                  <td>123-456-7890</td>
-                  <td>johnsmith@email.com</td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>John</td>
-                  <td>Smith</td>
-                  <td>123-456-7890</td>
-                  <td>johnsmith@email.com</td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>John</td>
-                  <td>Smith</td>
-                  <td>123-456-7890</td>
-                  <td>johnsmith@email.com</td>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>John</td>
-                  <td>Smith</td>
-                  <td>123-456-7890</td>
-                  <td>johnsmith@email.com</td>
-                </tr> 
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Barry</td>
-                  <td>Miller</td>
-                  <td>111-456-7890</td>
-                  <td>barrymiller@gmail.com</td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>John</td>
-                  <td>Smith</td>
-                  <td>123-456-7890</td>
-                  <td>johnsmith@email.com</td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>John</td>
-                  <td>Smith</td>
-                  <td>123-456-7890</td>
-                  <td>johnsmith@email.com</td>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Alex</td>
-                  <td>Smith</td>
-                  <td>123-456-7890</td>
-                  <td>johnsmith@email.com</td>
-                </tr>
-                <script>listContacts();</script>
-              <tbody>
-            </table>
+            <table id="dataTable" class="table table-striped table-hover table-responsive"></table> <!-- DATA TABLE -->
           </div>
-          <script>
-            // JS Code for data table
-            $(document).ready(function(){
-                $('#dataTable').dataTable({
-                  "bLengthChange": false, // Hides changing # of entries shown
-                  "sDom": 'lrtip', // Hides default search box
-                  "bInfo": false }); // Hides # of entries currently shown
-                
-                // Allows for use of our own search input field
-                var dataTable = $('#dataTable').dataTable();
-                $("#searchContact").keyup(function() {
-                    dataTable.fnFilter(this.value);
-                });    
-            });
-          </script>
         </div>
     </div>
   </div>
@@ -208,10 +92,8 @@
     </div>
   </div>
 <script> 
-  // Displays table when page is loaded
   window.onload = function() {
-    listContacts();
-    console.log(JSON.parse(getContacts()));
+    getContacts();
   };
   // Stops page from reloading and calls addContact function
   window.addEventListener("load", function () {

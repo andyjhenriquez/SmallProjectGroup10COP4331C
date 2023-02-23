@@ -163,7 +163,7 @@ function getContacts()
 	let url = urlBase + '/GetContacts.' + extension;
 	
 	let xhr = new XMLHttpRequest();
-	xhr.open("GET", url, true);
+	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	try
 	{
@@ -171,7 +171,7 @@ function getContacts()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				//document.getElementById("colorAddResult").innerHTML = "Color has been added";
+				displayData(JSON.parse(xhr.responseText));
 			}
 		};
 		xhr.send();
