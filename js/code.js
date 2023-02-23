@@ -78,8 +78,8 @@ function doRegister()
 	
     let fName = document.getElementById("firstName").value;
     let lName = document.getElementById("lastName").value;
-	let login = document.getElementById("floatingUsername").value;
-	let password = document.getElementById("floatingPassword").value;
+	let login = document.getElementById("inputUsername").value;
+	let password = document.getElementById("inputPassword").value;
 
 
 	let tmp = {firstName:fName,lastName:lName,user:login,pass:password};
