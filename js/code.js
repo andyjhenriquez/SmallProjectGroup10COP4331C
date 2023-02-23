@@ -103,11 +103,11 @@ function doRegister()
                 userId = jsonObject.id;
 				console.log(jsonObject);
 				console.log(userId);
-                if( userId < 1 )
-				{		
+                //if( userId < 1 )
+				//{		
 					//document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
-					return;
-				}
+				//	return;
+				//}
 		
 				firstName = jsonObject.firstName;
 				lastName = jsonObject.lastName;
