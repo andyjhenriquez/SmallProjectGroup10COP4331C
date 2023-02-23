@@ -103,12 +103,6 @@
     </div>
   </div>
 <script>
-  // Allows for clicking on rows
-  DataTable = $('#dataTable').DataTable();
-          DataTable.on('click', 'tbody tr', function() {
-          console.log('API row values : ', DataTable.row(this).data());
-          idNum = DataTable.row(this).data().ID;
-      })
   window.onload = function() {
     getContacts();
   };
