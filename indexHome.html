@@ -127,7 +127,11 @@
         $("#exampleModalCenter").hide();
         console.log("trying to hide modal");
 
-        $('#dataTable').DataTables().destroy();
+        var tables = $.fn.dataTable.fnTables(true);
+        $(tables).each(function () {
+          $(this).dataTable().fnDestroy();
+          console.log("DESTROYING TABLE");
+        });
         getContacts();
       }
       else
