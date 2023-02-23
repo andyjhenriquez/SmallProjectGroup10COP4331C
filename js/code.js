@@ -289,7 +289,7 @@ function editContact() {
 
 function deleteContact() {
 
-	console.log("In removeContact id: " + idNum);
+	console.log("In deleteContact id: " + idNum);
 
 	let tmp = { ID: idNum };
 	let jsonPayload = JSON.stringify(tmp);
