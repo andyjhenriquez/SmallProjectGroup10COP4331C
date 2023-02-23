@@ -1,4 +1,4 @@
-const urlBase = 'http://cop4331groupten.xyz/LAMPAPI';
+const urlB = 'http://cop4331groupten.xyz/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
@@ -21,7 +21,7 @@ function doRegister()
 
 	let jsonPayload = JSON.stringify( tmp );
 	
-	let url = urlBase + '/Register.' + extension;
+	let url = urlB + '/Register.' + extension;
 
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
