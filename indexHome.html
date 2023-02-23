@@ -218,9 +218,15 @@
 
       console.log("Before addContact");
       if(addContact())
+      {
         $('#exampleModalCenter').modal('hide');
+        console.log("trying to hide modal");
+      }
       else
+      {
         $('#exampleModalCenter').modal('show');
+        console.log("trying to hide modal");
+      }
     });
   });
 </script>
