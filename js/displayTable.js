@@ -1,5 +1,4 @@
 var idNum;
-var DataTable;
 
 function displayData(dataFromTable)
 {
@@ -29,9 +28,4 @@ function displayData(dataFromTable)
       $("#searchContact").keyup(function() {
           dataTable.fnFilter(this.value);
       });
-}
-
-function reloadTable()
-{
-  DataTable = $('#dataTable').DataTable();
 }
