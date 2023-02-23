@@ -201,6 +201,7 @@ function listContacts()
         $.getJSON(url,
             function (xhr) {
                 var tr;
+				console.log("In function with var xhr");
                 
                 // for the length of xhr (basically all values in the dataset), iterate through them and add them to a table
                 for (var i = 0; i < xhr.length; i++) {
