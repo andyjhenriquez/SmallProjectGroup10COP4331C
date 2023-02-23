@@ -34,15 +34,8 @@ function doLogin() {
 			console.log("Status: " + this.status);
 			if (this.readyState == 4 && this.status == 200) {
 				let jsonObject = JSON.parse(xhr.responseText);
-				userId = jsonObject.id;
 
 				console.log(jsonObject);
-				console.log(userId);
-
-				if (userId < 1) {
-					//document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
-					return;
-				}
 
 				firstName = jsonObject.firstName;
 				lastName = jsonObject.lastName;
