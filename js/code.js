@@ -227,7 +227,7 @@ function getContacts()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				console.log(xhr.responseText);
-				displayData(xhr.responseText);
+				displayData(JSON.parse(xhr.responseText));
 			}
 		};
 		xhr.send();
