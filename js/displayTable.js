@@ -18,8 +18,9 @@ function displayData(dataFromTable)
       
       // Allows for clicking on rows
       var dataTable = $('#dataTable').dataTable();
-      dataTable.on('click', 'tbody tr', function() {
-        console.log('API row values : ', dataTable.row(this).data());
+      var DataTable = $('#dataTable').DataTable();
+      DataTable.on('click', 'tbody tr', function() {
+        console.log('API row values : ', DataTable.row(this).data());
       })
       // Allows for use of our own search input field
       $("#searchContact").keyup(function() {
