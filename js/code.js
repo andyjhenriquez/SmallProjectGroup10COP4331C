@@ -247,11 +247,16 @@ function listContacts() {
 
 function editContact() {
 
-	//let id = alert(idNum);
 	let fn = document.getElementById("firstNameEdit").value;
 	let ln = document.getElementById("lastNameEdit").value;
 	let pn = document.getElementById("phoneEdit").value;
 	let e = document.getElementById("emailEdit").value;
+
+	console.log("In editContact id: " + idNum);
+	console.log("In editContact fn: " + fn);
+	console.log("In editContact ln: " + ln);
+	console.log("In editContact pn: " + pn);
+	console.log("In editContact e: " + e);
 
 	let tmp = { id: idNum, firstName: fn, lastName: ln, phone: pn, email: e };
 	let jsonPayload = JSON.stringify(tmp);
