@@ -126,8 +126,10 @@
         $('body').css('padding-right', '');
         $("#exampleModalCenter").hide();
         console.log("trying to hide modal");
-       
-        $('#dataTable').DataTable().clear().destroy();
+
+        if ($.fn.dataTable.isDataTable('#dataTable')) {
+          $('#dataTable').DataTable().destroy();
+        }
         getContacts();
       }
       else
