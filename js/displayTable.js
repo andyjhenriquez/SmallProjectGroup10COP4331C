@@ -1,5 +1,4 @@
 var idNum;
-var dataTable;
 var DataTable;
 
 function displayData(dataFromTable)
@@ -21,7 +20,6 @@ function displayData(dataFromTable)
         "bInfo": false }); // Hides # of entries currently shown
       
       // Allows for clicking on rows
-      dataTable = $('#dataTable').dataTable();
       DataTable = $('#dataTable').DataTable();
       DataTable.on('click', 'tbody tr', function() {
         console.log('API row values : ', DataTable.row(this).data());
@@ -35,7 +33,5 @@ function displayData(dataFromTable)
 
 function reloadTable()
 {
-  // Makes vars point to new table
-  dataTable = $('#dataTable').dataTable();
   DataTable = $('#dataTable').DataTable();
 }
