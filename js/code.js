@@ -260,7 +260,8 @@ function editContact() {
 
 	let tmp = { id: idNum, firstName: fn, lastName: ln, phone: pn, email: e };
 	let jsonPayload = JSON.stringify(tmp);
-
+	console.log(JSON.parse(jsonPayload));
+	
 	let url = urlBase + '/UpdateContact.' + extension;
 
 	let xhr = new XMLHttpRequest();
@@ -271,11 +272,12 @@ function editContact() {
 			if (this.readyState == 4 && this.status == 200) {
 				if (userId < 1) // THIS IS WHERE WE SEE IF CONTACT IS IN DB ALREADY
 				{
-					//document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+					console.log(xhr.responseText);
 					return false;
 				}
 			}
 		};
+		console.log(xhr.responseText);
 		xhr.send(jsonPayload);
 		return true;
 	}
