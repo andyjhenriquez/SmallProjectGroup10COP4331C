@@ -127,10 +127,7 @@
         $("#exampleModalCenter").hide();
         console.log("trying to hide modal");
 
-        if ($.fn.dataTable.isDataTable('#dataTable')) {
-          console.log("DESTROYING TABLE");
-          $('#dataTable').DataTable().destroy();
-        }
+        $('#dataTable').DataTables().destroy();
         getContacts();
       }
       else
