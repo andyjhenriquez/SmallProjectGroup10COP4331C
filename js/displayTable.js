@@ -1,4 +1,6 @@
 var idNum;
+var dataTable;
+var DataTable;
 
 function displayData(dataFromTable)
 {
@@ -19,8 +21,8 @@ function displayData(dataFromTable)
         "bInfo": false }); // Hides # of entries currently shown
       
       // Allows for clicking on rows
-      var dataTable = $('#dataTable').dataTable();
-      var DataTable = $('#dataTable').DataTable();
+      dataTable = $('#dataTable').dataTable();
+      DataTable = $('#dataTable').DataTable();
       DataTable.on('click', 'tbody tr', function() {
         console.log('API row values : ', DataTable.row(this).data());
         idNum = DataTable.row(this).data().ID;
@@ -29,4 +31,11 @@ function displayData(dataFromTable)
       $("#searchContact").keyup(function() {
           dataTable.fnFilter(this.value);
       });
+}
+
+function reloadTable()
+{
+  // Makes vars point to new table
+  dataTable = $('#dataTable').dataTable();
+  DataTable = $('#dataTable').DataTable();
 }
