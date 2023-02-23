@@ -29,6 +29,8 @@
 		$result = $stmt->get_result();
 
 		$rows = [];
+		console.log("rows: " + $rows);
+		console.log("result: " + $result->fetch_assoc());
 		if( $row = $result->fetch_assoc()  )
 		{
 			while($row = $result->fetch_row()) {
