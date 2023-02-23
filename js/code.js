@@ -196,7 +196,7 @@ function getContacts() {
 	try {
 		xhr.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200) {
-				console.log(xhr.responseText);
+				console.log(JSON.parse(xhr.responseText));
 				displayData(JSON.parse(xhr.responseText));
 			}
 		};
