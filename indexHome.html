@@ -126,7 +126,8 @@
         $("#exampleModalCenter").hide();
         console.log("trying to hide modal");
        
-        $('#dataTable').DataTable().ajax.reload(); // Reloads table after adding contact
+        dataTable.clear();
+        getContacts();
       }
       else
       {
