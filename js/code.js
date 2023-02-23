@@ -86,7 +86,7 @@ function doRegister()
 
 	let jsonPayload = JSON.stringify( tmp );
 	
-	let url = urlB + '/Register.' + extension;
+	let url = urlBase + '/Register.' + extension;
 
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
