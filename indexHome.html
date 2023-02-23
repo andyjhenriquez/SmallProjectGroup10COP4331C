@@ -128,6 +128,7 @@
         console.log("trying to hide modal");
 
         if ($.fn.dataTable.isDataTable('#dataTable')) {
+          console.log("DESTROYING TABLE");
           $('#dataTable').DataTable().destroy();
         }
         getContacts();
