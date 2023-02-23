@@ -71,9 +71,9 @@ function doRegister() {
 
 	let fName = document.getElementById("firstName").value;
 	let lName = document.getElementById("lastName").value;
-	let login = document.getElementById("inputUsername").value;
-	let password = document.getElementById("inputPassword").value;
-
+	login = document.getElementById("inputUsername").value;
+	password = document.getElementById("inputPassword").value;
+	let confirmpassword = document.getElementById("inputConfirmPassword").value;
 
 	let tmp = { firstName: fName, lastName: lName, user: login, pass: password };
 
@@ -90,7 +90,9 @@ function doRegister() {
 		xhr.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200) {
 				let jsonObject = JSON.parse(xhr.responseText);
-				console.log(jsonObject);
+
+				console.log("Got object");
+
 				//if( userId < 1 )
 				//{		
 				//document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
@@ -196,7 +198,7 @@ function getContacts() {
 	try {
 		xhr.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200) {
-				console.log(JSON.parse(xhr.responseText));
+				console.log(xhr.responseText);
 				displayData(JSON.parse(xhr.responseText));
 			}
 		};
