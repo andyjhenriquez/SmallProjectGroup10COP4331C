@@ -199,12 +199,7 @@
         $("#editModalCenter").hide();
         console.log("trying to hide modal");
        
-        var tables = $.fn.dataTable.fnTables(true);
-        $(tables).each(function () {
-          $(this).dataTable().fnDestroy();
-          console.log("DESTROYING TABLE");
-        });
-        getContacts();
+        location.reload();
       }
       else
       {
@@ -255,8 +250,7 @@
         $("#deleteModalCenter").hide();
         console.log("trying to hide modal");
        
-        $('#dataTable').DataTable().clear();
-        getContacts();
+        location.reload();
       }
       else
       {
