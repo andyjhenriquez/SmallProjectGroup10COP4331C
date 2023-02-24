@@ -18,7 +18,7 @@
 	{
 
 		// Molds the skeleton for the action to be taken in the database
-		$stmt = $conn->prepare("DELETE FROM DevContacts WHERE ID = ?");
+		$stmt = $conn->prepare("DELETE FROM Contacts WHERE ID = ?");
 
 		// Sets variables (s for string i for integer)
 		$stmt->bind_param("i", $contactID);

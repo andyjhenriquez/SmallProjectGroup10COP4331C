@@ -18,7 +18,7 @@
         $userID = $_SESSION['userID'];
 
 		// Molds the skeleton for the action to be taken in the database
-		$stmt = $conn->prepare("SELECT firstName, lastName, phone, email, ID FROM DevContacts WHERE userID = ?");
+		$stmt = $conn->prepare("SELECT firstName, lastName, phone, email, ID FROM Contacts WHERE userID = ?");
 
 		// Sets variables (s for string i for integer)
 		$stmt->bind_param("i", $userID);

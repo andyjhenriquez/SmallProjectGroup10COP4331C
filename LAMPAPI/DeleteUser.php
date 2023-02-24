@@ -17,7 +17,7 @@
 		echo "session userid type : " . gettype($_SESSION['userID']);
 
 		// Molds the skeleton for the action to be taken in the database
-		$stmt = $conn->prepare("DELETE FROM DevUsers WHERE ID = ?");
+		$stmt = $conn->prepare("DELETE FROM Users WHERE ID = ?");
 
 		// Sets variables (s for string i for integer)
 		$stmt->bind_param("i", $userID);

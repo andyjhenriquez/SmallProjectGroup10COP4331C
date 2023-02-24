@@ -17,7 +17,7 @@
 	{
 
 		// Molds the skeleton for the action to be taken in the database
-		$stmt = $conn->prepare("INSERT INTO DevUsers (firstName, lastName, user, pass) VALUES(?,?,?,?)");
+		$stmt = $conn->prepare("INSERT INTO Users (firstName, lastName, user, pass) VALUES(?,?,?,?)");
 
 		// Sets variables (s for string i for integer)
 		$stmt->bind_param("ssss", $firstName, $lastName, $user, $pass);

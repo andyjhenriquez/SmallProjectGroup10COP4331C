@@ -24,7 +24,7 @@
 		$userID = $_SESSION['userID'];
 
 		// Molds the skeleton for the action to be taken in the database
-		$stmt = $conn->prepare("INSERT INTO DevContacts (firstName, lastName, phone, email, userID) VALUES(?,?,?,?,?)");
+		$stmt = $conn->prepare("INSERT INTO Contacts (firstName, lastName, phone, email, userID) VALUES(?,?,?,?,?)");
 
 		// Sets variables (s for string i for integer)
 		$stmt->bind_param("ssssi", $firstName, $lastName, $phone, $email, $userID);

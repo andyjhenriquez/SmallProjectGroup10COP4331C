@@ -18,7 +18,7 @@
 	else
 	{
 		// Molds the skeleton for the action to be taken in the database
-		$stmt = $conn->prepare("UPDATE DevContacts SET firstName = ?, lastName = ?, phone = ?, email = ? WHERE ID=?");
+		$stmt = $conn->prepare("UPDATE Contacts SET firstName = ?, lastName = ?, phone = ?, email = ? WHERE ID=?");
 
 		// Sets variables (s for string i for integer)
 		$stmt->bind_param("ssssi", $inData['firstName'], $inData['lastName'], $inData['phone'], $inData['email'], $contactID);
