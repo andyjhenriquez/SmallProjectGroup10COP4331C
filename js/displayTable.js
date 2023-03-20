@@ -27,6 +27,6 @@ function displayData(dataFromTable)
       })
       // Allows for use of our own search input field
       $("#searchContact").keyup(function() {
-          dataTable.fnFilter(this.value);
+          DataTable.fnFilter(this.value);
       });
 }
