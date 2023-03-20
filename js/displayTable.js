@@ -28,11 +28,13 @@ function displayData(dataFromTable)
         
         // Allows selection of a single row to be highlighted
         if ($(this).hasClass('selected')) {
-          $(this).removeClass('selected');      
+          $(this).removeClass('selected'); 
+          $('button2').prop('disabled', true); // Disables buttons if selected already and then clicked on again
         }
         else {
           $('#dataTable tr.selected').removeClass('selected');
           $(this).addClass('selected');
+          $('button2').prop('disabled', false); // Enables buttons if not selected and then clicked on
         }
       })
       // Allows for use of our own search input field
