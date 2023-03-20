@@ -25,7 +25,15 @@ function displayData(dataFromTable)
         dataTable.on('click', 'tbody tr', function() {
         console.log('API row values : ', dataTable.row(this).data());
         idNum = dataTable.row(this).data().ID;
-        dataTable.row(this).select();
+        
+        // Allows selection of a single row to be highlighted
+        if ($(this).hasClass('selected')) {
+          $(this).removeClass('selected');      
+        }
+        else {
+          $('#dataTable tr.selected').removeClass('selected');
+          $(this).addClass('selected');
+        }
       })
       // Allows for use of our own search input field
       $("#searchContact").keyup(function() {
