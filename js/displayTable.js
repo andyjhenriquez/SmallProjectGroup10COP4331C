@@ -25,6 +25,7 @@ function displayData(dataFromTable)
         dataTable.on('click', 'tbody tr', function() {
         console.log('API row values : ', dataTable.row(this).data());
         idNum = dataTable.row(this).data().ID;
+        dataTable.row(this).select();
       })
       // Allows for use of our own search input field
       $("#searchContact").keyup(function() {
