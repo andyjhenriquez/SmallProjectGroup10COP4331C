@@ -29,12 +29,12 @@ function displayData(dataFromTable)
         // Allows selection of a single row to be highlighted
         if ($(this).hasClass('selected')) {
           $(this).removeClass('selected'); 
-          $('#button2').prop('disabled', true); // Disables buttons if selected already and then clicked on again
+          $('input[type="submit"], input[type="button2"], button').disable(true); // Disables buttons if selected already and then clicked on again
         }
         else {
           $('#dataTable tr.selected').removeClass('selected');
           $(this).addClass('selected');
-          $('#button2').prop('disabled', false); // Enables buttons if not selected and then clicked on
+          $('input[type="submit"], input[type="button"], button').disable(false); // Enables buttons if not selected and then clicked on
         }
       })
       // Allows for use of our own search input field
@@ -42,3 +42,12 @@ function displayData(dataFromTable)
         $('#dataTable').dataTable().fnFilter(this.value);
       });
 }
+
+// Disable function for buttons
+jQuery.fn.extend({
+  disable: function(state) {
+    return this.each(function() {
+      this.disabled = state;
+    });
+  }
+});
