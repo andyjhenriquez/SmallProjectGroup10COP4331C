@@ -29,14 +29,14 @@ function displayData(dataFromTable)
         // Allows selection of a single row to be highlighted
         if ($(this).hasClass('selected')) {
           $(this).removeClass('selected'); 
-          $('input[type="submit"], input[type="button2"], button').disable(true); // Disables buttons if selected already and then clicked on again
-          $('input[type="submit"], input[type="button3"], button').disable(true);
+          $('button[type="button2"]').disable(true); // Disables buttons if selected already and then clicked on again
+          $('button[type="button3"]').disable(true);
         }
         else {
           $('#dataTable tr.selected').removeClass('selected');
           $(this).addClass('selected');
-          $('input[type="submit"], input[type="button2"], button').disable(false); // Enables buttons if not selected and then clicked on
-          $('input[type="submit"], input[type="button3"], button').disable(false);
+          $('button[type="button2"]').disable(false); // Enables buttons if not selected and then clicked on
+          $('button[type="button3"]').disable(false);
         }
       })
       // Allows for use of our own search input field
