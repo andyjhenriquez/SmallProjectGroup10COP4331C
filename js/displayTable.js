@@ -17,7 +17,8 @@ function displayData(dataFromTable)
         data: dataFromTable, // Populates with data from table
         "bLengthChange": false, // Hides changing # of entries shown
         "sDom": 'lrtip', // Hides default search box
-        "bInfo": false }); // Hides # of entries currently shown
+        "bInfo": false,  // Hides # of entries currently shown
+        select: true }); // Allows selection of a single row to be highlighted
       
         // Allows for clicking on rows
         dataTable = $('#dataTable').DataTable();
