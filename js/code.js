@@ -80,21 +80,7 @@ function doRegister() {
 	login = document.getElementById("inputUsername").value;
 	password = document.getElementById("inputPassword").value;
 	let confirmpassword = document.getElementById("inputConfirmPassword").value;
-	var phone_input = document.getElementById("phoneNumber").value;
-
-	phone_input.addEventListener('input', () => {
-		phone_input.setCustomValidity('');
-		phone_input.checkValidity();
-	  });
-	  
-	  phone_input.addEventListener('invalid', () => {
-		if(phone_input.value === '') {
-		  phone_input.setCustomValidity('Enter phone number!');
-		} else {
-		  phone_input.setCustomValidity('Enter phone number in this format: 123-456-7890');
-		}
-	  });
-
+	
 	let tmp = { firstName: fName, lastName: lName, user: login, pass: password };
 
 	let jsonPayload = JSON.stringify(tmp);
