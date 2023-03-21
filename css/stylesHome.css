@@ -34,6 +34,16 @@ button[type=button3] {
     width: 30%;
 }
 
+button[type=button4] {
+    overflow     : hidden;
+
+    margin-left: 80%; 
+    margin-top:  3%;
+
+    height: 50px;
+    width: 100px;
+}
+
 .margin-bottom {
     margin-bottom:15px;
 }
