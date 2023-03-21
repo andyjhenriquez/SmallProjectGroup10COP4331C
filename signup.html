@@ -43,27 +43,27 @@
 					</h1>
 					<p>Please Sign Up</p>
 		
-						<form id="registerForm">
+						<form id="registerForm" onsubmit="return false;">
 							<div class="form-floating mb-3">
 								<input type="text" class="form-control" id="firstName" placeholder="myfirstname"
-									required autofocus>
+								required minlength="2" maxlength="8" required autofocus>
 								<label for="firstName">First Name</label>
 							</div>
 							<div class="form-floating mb-3">
 								<input type="text" class="form-control" id="lastName" placeholder="mylasttname" required
-									autofocus>
+								required minlength="2" maxlength="8" autofocus>
 								<label for="lastName">Last Name</label>
 							</div>
 
 							<div class="form-floating mb-3">
-								<input type="text" class="form-control" id="emailAddress" placeholder="myemailaddress"
+								<input type="email" class="form-control" id="emailAddress" placeholder="myemailaddress"
 									required autofocus>
 								<label for="emailaddress">Email Address</label>
 							</div>
 
 							<div class="form-floating mb-3">
-								<input type="text" class="form-control" id="phoneNumber" placeholder="myphonenumber"
-									required autofocus>
+								<input type="tel" class="form-control" id="phoneNumber" placeholder="myphonenumber"
+								rpattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required required autofocus>
 								<label for="phoneNumber">Phone Number</label>
 							</div>
 
@@ -87,7 +87,7 @@
 							</div>
 
 							<div class="d-grid mb-2">
-								<button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="button"
+								<button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit"
 									onclick="doRegister()">Sign Up</button>
 							</div>
 
