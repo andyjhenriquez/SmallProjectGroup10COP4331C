@@ -1,4 +1,4 @@
-const urlBase = 'http://cop4331groupten.xyz/LAMPAPI';
+const urlBase = 'https://cop4331groupten.xyz/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
@@ -12,6 +12,7 @@ function doLogin() {
 
 	let login = document.getElementById("floatingUsername").value;
 	let password = document.getElementById("floatingPassword").value;
+	
 	//	var hash = md5( password );
 
 	//document.getElementById("loginResult").innerHTML = "";
@@ -64,6 +65,11 @@ function doLogin() {
 
 }
 
+
+
+
+
+
 function doRegister() {
 	userId = 0;
 	firstName = "";
@@ -74,7 +80,7 @@ function doRegister() {
 	login = document.getElementById("inputUsername").value;
 	password = document.getElementById("inputPassword").value;
 	let confirmpassword = document.getElementById("inputConfirmPassword").value;
-
+	
 	let tmp = { firstName: fName, lastName: lName, user: login, pass: password };
 
 	let jsonPayload = JSON.stringify(tmp);
