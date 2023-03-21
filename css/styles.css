@@ -3,9 +3,13 @@
 }
 
 .bg-image {
-  background-image: url('/background.jpg');
+  background-image: url('/Users/annbinus/Desktop/SmallProjectGroup10COP4331C/background.jpg');
   background-size: cover;
   background-position: center;
+}
+
+.fade-in-text {
+  animation: fadeIn 3s;
 }
 
 .contact-info-form {
@@ -21,3 +25,18 @@
   letter-spacing: 0.05rem;
   padding: 0.75rem 1rem;
 }
+
+@keyframes fadeIn {
+  0% { opacity: 0; 
+    transform: translateX(-20px);}
+  100% { opacity: 1; 
+    transform: translateX(0);}
+}
+
+@media (max-width: 995px){
+  .bg-image{
+    display: none;
+  }
+}
+ 
+ 
