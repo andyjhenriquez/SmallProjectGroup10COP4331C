@@ -34,6 +34,16 @@ button[type=button3] {
     width: 30%;
 }
 
+button[type=button4] {
+    overflow     : hidden;
+
+    margin-left: 80%; 
+    margin-top:  3%;
+
+    height: 50px;
+    width: 100px;
+}
+
 .margin-bottom {
     margin-bottom:15px;
 }
@@ -45,8 +55,8 @@ div.displayTable {
 
     background-color: #ffffff;
 
-    height: 76%;
-    width:120%; 
+    height: 480px;
+    width: 120%; 
     margin-left:-15%; 
     margin-top:  25%;
 
