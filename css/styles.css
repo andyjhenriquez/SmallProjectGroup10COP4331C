@@ -3,7 +3,7 @@
 }
 
 .bg-image {
-  background-image: url('/Users/annbinus/Desktop/SmallProjectGroup10COP4331C/background.jpg');
+  background-image: url('background.jpg');
   background-size: cover;
   background-position: center;
 }
