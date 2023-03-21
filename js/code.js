@@ -169,6 +169,12 @@ function addContact() {
 	let pn = document.getElementById("phone").value;
 	let e = document.getElementById("email").value;
 
+	console.log("Before creating jsonPayload");
+	console.log(fn);
+	console.log(ln);
+	console.log(pn);
+	console.log(e);
+
 	let tmp = { firstName: fn, lastName: ln, phone: pn, email: e };
 	let jsonPayload = JSON.stringify(tmp);
 
