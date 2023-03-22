@@ -46,24 +46,24 @@
 						<form id="registerForm" onsubmit="return false;">
 							<div class="form-floating mb-3">
 								<input type="text" class="form-control" id="firstName" placeholder="myfirstname"
-								required minlength="2" maxlength="8" required autofocus>
+								 minlength="2" maxlength="8" required autofocus>
 								<label for="firstName">First Name</label>
 							</div>
 							<div class="form-floating mb-3">
-								<input type="text" class="form-control" id="lastName" placeholder="mylasttname" required
+								<input type="text" class="form-control" id="lastName" placeholder="mylasttname" 
 								required minlength="2" maxlength="8" autofocus>
 								<label for="lastName">Last Name</label>
 							</div>
 
 							<div class="form-floating mb-3">
 								<input type="email" class="form-control" id="emailAddress" placeholder="myemailaddress"
-								pattern=".+@globex\.com" size="30" required required autofocus>
+								pattern=".+@globex\.com" size="30" required  autofocus>
 								<label for="emailaddress">Email Address</label>
 							</div>
 
 							<div class="form-floating mb-3">
 								<input type="tel" class="form-control" id="phoneNumber" placeholder="myphonenumber"
-								rpattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required required minlength="10" maxlength="10" required autofocus>
+								rpattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  minlength="10" maxlength="10" required autofocus>
 								<label for="phoneNumber">Phone Number</label>
 							</div>
 
@@ -71,7 +71,7 @@
 
 							<div class="form-floating mb-3">
 								<input type="text" class="form-control" id="inputUsername" placeholder="myusername"
-								required minlength="2" maxlength="8" required autofocus>
+								 minlength="2" maxlength="8" required autofocus>
 								<label for="inputUsername">Username</label>
 							</div>
 
@@ -87,8 +87,7 @@
 							</div>
 
 							<div class="d-grid mb-2">
-								<button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit"
-									onclick="doRegister()">Sign Up</button>
+								<button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Sign Up</button>
 							</div>
 
 							<a class="d-block text-center mt-2 small" href="index.html">Have an account? Sign In</a>
@@ -105,5 +104,20 @@
 	  </div>
 	  
 </body>
+<script>
+	window.addEventListener("load", function () {
+	   //not jquery!
+	   // Access the form element...
+	   var form = document.getElementById("registerForm");
+	   
+	   // ...and take over its submit event.
+	   form.addEventListener("submit", function (event) {
+		   event.preventDefault(); // prevent form submission and reloading the page.
+   
+		   doRegister();
+	   });
+   });
+   </script>
+</html>
 
 </html>
