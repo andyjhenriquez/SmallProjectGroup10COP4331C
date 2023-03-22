@@ -79,7 +79,7 @@ function doRegister() {
 	let lName = document.getElementById("lastName").value;
 	login = document.getElementById("inputUsername").value;
 	password = document.getElementById("inputPassword").value;
-	let phonenum = document.getElementById("phoneNumber").value;
+	
 	let confirmpassword = document.getElementById("inputConfirmPassword").value;
 	
 	let tmp = { firstName: fName, lastName: lName, user: login, pass: password };
@@ -120,16 +120,7 @@ function doRegister() {
 	catch (err) {
 		document.getElementById("loginResult").innerHTML = err.message;
 	}
-	var phoneno = /^\d{10}$/;
-  if(phonenum.match(phoneno))
-  {
-      return true;
-  }
-  else
-  {
-     alert("Not a valid Phone Number");
-     return false;
-  }
+
 }
 
 function saveCookie() {
