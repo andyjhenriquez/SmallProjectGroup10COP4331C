@@ -251,7 +251,7 @@ function listContacts() {
 					tr.append("<td>" + xhr[i].phone + "</td>");
 					tr.append("<td>" + xhr[i].email + "</td>");
 					tr.append("<td>" + xhr[i].ID + "</td>");
-					tr.append("<td><button class='edit-btn' data-id='" + xhr[i].ID + "'>Edit</button></td>");
+					tr.append("<td><button class='edit-btn btn btn-outline-secondary btn-circle btn-xs' data-id='" + xhr[i].ID + "'>Edit</button></td>");
     				tr.append("<td><button class='delete-btn' data-id='" + xhr[i].ID + "'>Delete</button></td>");
 					console.log(tr);
 					$('table').append(tr);
