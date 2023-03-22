@@ -63,7 +63,7 @@
 
 							<div class="form-floating mb-3">
 								<input type="tel" class="form-control" id="phoneNumber" placeholder="myphonenumber"
-								rpattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required required autofocus>
+								rpattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required required minlength="10" maxlength="10" required autofocus>
 								<label for="phoneNumber">Phone Number</label>
 							</div>
 
@@ -71,18 +71,18 @@
 
 							<div class="form-floating mb-3">
 								<input type="text" class="form-control" id="inputUsername" placeholder="myusername"
-									required autofocus>
+								required minlength="2" maxlength="8" required autofocus>
 								<label for="inputUsername">Username</label>
 							</div>
 
 							<div class="form-floating mb-3">
-								<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+								<input type="password" class="form-control" id="inputPassword" placeholder="Password" required minlength="2" maxlength="8">
 								<label for="inputPassword">Password</label>
 							</div>
 
 							<div class="form-floating mb-3">
 								<input type="password" class="form-control" id="inputConfirmPassword"
-									placeholder="Password">
+								required minlength="2" maxlength="8" placeholder="Password">
 								<label for="inputConfirmPassword">Confirm Password</label>
 							</div>
 
