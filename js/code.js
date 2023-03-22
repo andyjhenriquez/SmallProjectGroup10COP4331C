@@ -251,11 +251,48 @@ function listContacts() {
 					tr.append("<td>" + xhr[i].phone + "</td>");
 					tr.append("<td>" + xhr[i].email + "</td>");
 					tr.append("<td>" + xhr[i].ID + "</td>");
+					tr.append("<td><button class='edit-btn' data-id='" + xhr[i].ID + "'>Edit</button></td>");
+    				tr.append("<td><button class='delete-btn' data-id='" + xhr[i].ID + "'>Delete</button></td>");
 					console.log(tr);
 					$('table').append(tr);
 				}
+				// add event listeners to edit and delete buttons
+  $('.edit-btn').click(function() {
+    // get the ID of the contact associated with this button
+    let id = $(this).data('id');
+    
+    // call a function to handle editing the contact with the given ID
+    loadContactIntoEditModal(id);
+  });
+  
+  $('.delete-btn').click(function() {
+    // get the ID of the contact associated with this button
+    let id = $(this).data('id');
+    
+    // call a function to handle deleting the contact with the given ID
+    deleteContact(id);
+  });
 			});
 	});
+}
+function loadContactIntoEditModal(contactId) {
+    let url = urlBase + '/GetContacts.' + extension;
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let contact = JSON.parse(xhr.responseText);
+            document.getElementById('firstNameEdit').value = contact.firstName;
+            document.getElementById('lastNameEdit').value = contact.lastName;
+            document.getElementById('phoneEdit').value = contact.phone;
+            document.getElementById('emailEdit').value = contact.email;
+            document.getElementById('idNum').value = contact.ID;
+            $('#editModalCenter').modal('show');
+        }
+    };
+    xhr.send(JSON.stringify({ ID: contactId }));
 }
 
 function editContact() {
@@ -300,11 +337,11 @@ function editContact() {
 
 }
 
-function deleteContact() {
+function deleteContact(id) {
 
-	console.log("In deleteContact id: " + idNum);
+	console.log("In deleteContact id: " + id);
 
-	let tmp = { ID: idNum };
+	let tmp = { ID: id };
 	let jsonPayload = JSON.stringify(tmp);
 	console.log(JSON.parse(jsonPayload));
 

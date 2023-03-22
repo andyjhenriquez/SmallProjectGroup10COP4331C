@@ -45,12 +45,12 @@
 		
 						<form id="registerForm" onsubmit="return false;">
 							<div class="form-floating mb-3">
-								<input type="text" class="form-control" id="firstName" placeholder="myfirstname"
+								<input type="text" class="form-control" id="firstName" pattern="[A-Za-z]" placeholder="myfirstname"
 								 minlength="2"  required autofocus>
 								<label for="firstName">First Name</label>
 							</div>
 							<div class="form-floating mb-3">
-								<input type="text" class="form-control" id="lastName" placeholder="mylasttname" 
+								<input type="text" class="form-control" id="lastName" pattern="[A-Za-z]" placeholder="mylasttname" 
 								required minlength="2" autofocus>
 								<label for="lastName">Last Name</label>
 							</div>

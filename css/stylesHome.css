@@ -63,4 +63,33 @@ div.displayTable {
     display: block;
     overflow-y: auto;
 }
+.table tbody>tr>td.middle {
+	vertical-align: middle;
+}
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+  }
+  
 
+.navbar {
+	background: #f8f8f8;
+	-moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+}
+
+.navbar .navbar-brand {
+	font-weight: bold;
+	font-size: 30px;
+	color: #dd5638;
+}
+
+.navbar-right {
+	margin-right: 10px;
+}
