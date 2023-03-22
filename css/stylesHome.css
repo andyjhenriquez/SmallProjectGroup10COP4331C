@@ -4,7 +4,7 @@ div.displayButtons {
 }
 
 input[id=searchContact] {
-    width: 70%;
+    width: 100%;
 }
 
 button[type=button1] {
@@ -48,21 +48,33 @@ button[type=button4] {
     margin-bottom:15px;
 }
 
-div.displayTable {
-    border: 3px solid rgb(13, 110, 253);
-    border-radius: 12px;
-    padding: 0px;
-
-    background-color: #ffffff;
-
-    height: 480px;
-    width: 140%; 
-    margin-left:-15%; 
-    margin-top:  25%;
-
-    display: block;
-    overflow-y: auto;
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
+
+thead th {
+  color: darkgrey;
+}
+
+.card {
+  border-radius: .5rem;
+}
+
+.table-scroll {
+  border-radius: .5rem;
+}
+
+.table-scroll table thead th {
+  font-size: 1.25rem;
+}
+thead {
+  top: 0;
+  position: sticky;
+}
+
 .table tbody>tr>td.middle {
 	vertical-align: middle;
 }

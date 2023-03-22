@@ -37,7 +37,7 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item p-3"><a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Add New</a></li>
-          <li class="nav-item p-3"><a class="btn btn-outline-primary" onclick="window.location.href='https://www.cop4331groupten.xyz';">Logout</a></li>
+          <li class="button4 p-3"><button class="btn btn-danger btn-l" onclick="window.location.href='https://www.cop4331groupten.xyz';">Logout</button></li>
         </ul>
       </div>
     </div>
@@ -48,13 +48,13 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <div class="row-6 d-flex justify-content-center align-items-center"> <!-- Search Contact input field -->
+          <div class="row-6 d-flex justify-content-center align-items-center mb-5"> <!-- Search Contact input field -->
             <input type="text" class="form-control" id="searchContact" placeholder="Search Contact">
           </div>
-          <div class="row-6 d-flex justify-content-center align-items-center"> <!-- Edit button -->
+          <div class="row-6 d-flex justify-content-center align-items-center mb-3"> <!-- Edit button -->
             <button type="button2" class="btn btn-primary btn-lg md-5" data-bs-toggle="modal" data-bs-target="#editModalCenter" disabled>Edit</button>
           </div>
-          <div class="row-6 d-flex justify-content-center align-items-center"> <!-- Delete button -->
+          <div class="row-6 d-flex justify-content-center align-items-center mb-3"> <!-- Delete button -->
             <button type="button3" class="btn btn-danger btn-lg md-5" data-bs-toggle="modal" data-bs-target="#deleteModalCenter" disabled>Delete</button>
           </div>
         </div><!-- /.col-md-3 -->
@@ -62,16 +62,17 @@
             
       <div class="col-md-9">
         <div class="card">
-          <div class="card-header"><strong>All Contacts</strong></div>
-            <table id="dataTable" class="table table-hover table-responsive">
-              <thead>
-                <tr>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Phone Number</th>
-                  <th>Email Address</th>
-                </tr>
-              </thead>
+          <div class="card-body p-0">
+            <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px">
+              <table id="dataTable" class="table table-hover table-striped mb-0">
+                <thead">
+                  <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Email Address</th>
+                  </tr>
+                </thead>
             </table> <!-- DATA TABLE -->
     </div>
   </div>
